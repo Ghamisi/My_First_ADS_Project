@@ -10,8 +10,14 @@ from sklearn.model_selection import train_test_split
 
 df = pd.read_csv('clean_diabetes_data.csv')
 
-st.title('Diabetes Status Prediction App')
+st.title('Diabetes Status In Women Prediction App')
+st.write("""
+# Diabetes Prediction App
 
+This app predicts the **Diabetes Status** in women!
+
+Data obtained from the [palmerpenguins library](https://datahub.io/machine-learning/diabetes) by Vincent Sigillito.
+""")
 st.subheader('Training Data')
 st.write(df.head())
 st.write(df.describe())
