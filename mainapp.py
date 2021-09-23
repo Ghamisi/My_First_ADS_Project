@@ -30,7 +30,8 @@ y = df.iloc[:, -1]
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 0)
 
-def user_report():
+st.sidebar.header('User Input Features')
+def user_features():
         pregnancies = st.sidebar.slider('Pregnancies', 0, 17)
         glucose = st.sidebar.slider('Glucose level', 0,200)
         bloodpressure = st.sidebar.slider('Blood Pressure', 0, 122)
@@ -40,7 +41,7 @@ def user_report():
         DiabetesPedigreeFunction = st.sidebar.slider('Diabetes Pedigree Function', 0.0, 2.4)
         age = st.sidebar.slider('Age', 21, 88)
 
-        user_report = {
+        user_features = {
                 'Pregnancies': pregnancies,
                 'Glucose': glucose,
                 'BloodPressure': bloodpressure,
@@ -50,10 +51,10 @@ def user_report():
                 'DiabetesPedigreeFunction': DiabetesPedigreeFunction,
                 'Age': age
 }
-        report_data = pd.DataFrame(user_report, index=[0])
+        report_data = pd.DataFrame(user_features, index=[0])
         return report_data
 
-user_data = user_report()
+user_data = user_features()
 
 scaler = StandardScaler()
 
