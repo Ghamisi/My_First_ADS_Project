@@ -71,9 +71,9 @@ user_result = reg.predict(user_data)
 st.subheader('Your Report: ')
 output = ''
 if user_result[0]==0:
-    output = 'You Tested Negative'
+    output = 'You Likely to Test Negative For Diabetes'
 else:
-    output = 'You Tested Positive'
+    output = 'You Likely to Test Positive For Diabetes'
 
 st.write(output)
 
